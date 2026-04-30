@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: math-teacher-bot
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT
+    envVars:
+      - key: BOT_TOKEN
+        value: 6267222413:AAGIRbdQEj5fNQSGS3oLOhAju7a5QSgOHx4
+      - key: GEMINI_API_KEY
+        value: AIzaSyBVrxuJiIlYqgzqRAbC_90XxwJ1npCfBBc
+      - key: PORT
+        value: 10000
